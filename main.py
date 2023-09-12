@@ -142,7 +142,11 @@ def delete():
     with open(r"./severe.txt", "w") as f:
         f.write("0,0,\n")
     return "deleted"
-    
+
+
+@app.route('/download/<upload_id>')
+def download():
+    return send_file(r"./moderate.txt",download_name=upload.filename, as_attachment=True )
 
 if __name__ == '__main__':
     app.run(debug=True)
