@@ -109,7 +109,7 @@ def markers():
             for row in moderate:
                 moderateX.append(row.split(',')[0])
                 moderateY.append(row.split(',')[1])
-    finally:
+    except:
         pass
 
     try:
@@ -118,7 +118,7 @@ def markers():
             for row in severe:
                 severeX.append(row.split(',')[0])
                 severeY.append(row.split(',')[1])
-    finally:
+    except:
         pass
     json = {
         "moderate": {
