@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template,send_file
 from geopy.distance import geodesic
+from zipfile import ZipFile
 import os
 
 app = Flask(__name__)
@@ -146,7 +147,10 @@ def delete():
 
 @app.route('/download')
 def download():
-    return send_file(r"moderate.txt",download_name="mod.txt", as_attachment=True )
+    with ZipFile("final.zip", 'w') as new_zip:
+        new_zip.write(r"./moderate.txt")
+        new_zip.write(r"./severe.txt")
+    return send_file(r"final.zip",download_name="mod.zip", as_attachment=True )
 
 if __name__ == '__main__':
     app.run(debug=True)
