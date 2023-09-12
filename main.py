@@ -12,7 +12,7 @@ def get_data():
     Z = request.form['z']
     lat = request.form['lat']
     lon = request.form['lon']
-    if float(Y) > 1:
+    if float(Y) > 1 and float(Y) < 2:
         with open(r"./moderate.txt", "r+") as f:
             rows = f.readlines()
             prevlat = rows[-1].split(',')[0]
