@@ -4,7 +4,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var update = False
+var update = false
 var locatorIcon = L.icon({
    iconUrl: 'https://i.imgur.com/CoiaNMM.png',
 
@@ -52,7 +52,7 @@ vhr.onload = () => {
     var newCenter = L.latLng(data.lat[0],data.lon[0]);
     if(!update){
     map.setView(newCenter);
-    update = True;
+    update = true;
     }
     locator.setLatLng(newCenter);
   } else {
