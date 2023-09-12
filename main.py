@@ -146,7 +146,7 @@ def delete():
 
 @app.route('/download')
 def download():
-    return send_file(r"./moderate.txt",download_name="mod.txt", as_attachment=True )
+    return send_file(r"moderate.txt",download_name="mod.txt", as_attachment=True )
 
 if __name__ == '__main__':
     app.run(debug=True)
