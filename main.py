@@ -139,7 +139,7 @@ def markers():
 def delete():
     os.remove(r"/moderate.txt")
     os.remove(r"./severe.txt")
-    return "deleted
+    return "deleted"
 
 
 if __name__ == '__main__':
