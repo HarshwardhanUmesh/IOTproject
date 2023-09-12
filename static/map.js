@@ -1,10 +1,10 @@
-//var locatorIcon = L.icon({
-//    iconUrl: '',
-//
-//    iconSize:     [38, 38], // size of the icon
-//    iconAnchor:   [22, 22], // point of the icon which will correspond to marker's location
-//    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-//});
+var locatorIcon = L.icon({
+   iconUrl: '',
+
+   iconSize:     [38, 38], // size of the icon
+   iconAnchor:   [22, 22], // point of the icon which will correspond to marker's location
+   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 var moderateIcon = L.icon({
     iconUrl: 'https://i.imgur.com/Kz73Sjr.png',
 
@@ -19,7 +19,7 @@ var severeIcon = L.icon({
     iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
-//var locator = L.marker([51.5, -0.09], {icon: locatorIcon}).addTo(map).bindPopup("You Are here");
+var locator = L.marker([51.5, -0.09], {icon: locatorIcon}).addTo(map).bindPopup("You Are here");
 var lenM = 0
 var lenS = 0
 const vhr = new XMLHttpRequest();
@@ -29,7 +29,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 function updateChart(){
-vhr.open("GET", "http://192.168.1.6:5000/data/");
+vhr.open("GET", "https://potholedetection-f0b97ab1eedf.herokuapp.com/data/");
 vhr.send();
 vhr.responseType = "json";
 vhr.onload = () => {
@@ -43,7 +43,7 @@ vhr.onload = () => {
   }
 };
 
-//locator.setLatLng(newCenter);
+locator.setLatLng(newCenter);
 
 //console.log("Updated")
 dhr.open("GET", "http://192.168.1.6:5000/markers");
