@@ -97,30 +97,34 @@ def markers():
     moderateY = []
     severeX = []
     severeY = []
-
-    with open(r"./moderate.txt", "r") as f:
-        if f:
+    try:
+        with open(r"./moderate.txt", "r") as f:
             moderate = f.readlines()
             for row in moderate:
                 moderateX.append(row.split(',')[0])
                 moderateY.append(row.split(',')[1])
-    with open(r"./severe.txt", "r") as f:
-        if f:
+    finally:
+        pass
+
+    try:
+        with open(r"./severe.txt", "r") as f:
             severe = f.readlines()
             for row in severe:
                 severeX.append(row.split(',')[0])
                 severeY.append(row.split(',')[1])
+    finally:
+        pass
     json = {
-            "moderate": {
-                "x": moderateX,
-                "y": moderateY
-            },
-            "severe": {
-                "x": severeX,
-                "y": severeY
-            }
-    
+        "moderate": {
+            "x": moderateX,
+            "y": moderateY
+        },
+        "severe": {
+            "x": severeX,
+            "y": severeY
         }
+
+    }
     return jsonify(json)
 
 
