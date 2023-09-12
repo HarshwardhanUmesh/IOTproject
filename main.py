@@ -99,13 +99,13 @@ def markers():
     severeY = []
 
     with open(r"./moderate.txt", "r") as f:
-        if len(f) != 0:
+        if len(f.strip()) != 0:
             moderate = f.readlines()
             for row in moderate:
                 moderateX.append(row.split(',')[0])
                 moderateY.append(row.split(',')[1])
     with open(r"./severe.txt", "r") as f:
-        if len(f) != 0:
+        if len(f.strip()) != 0:
             severe = f.readlines()
             for row in severe:
                 severeX.append(row.split(',')[0])
