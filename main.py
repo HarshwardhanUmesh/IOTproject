@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 from geopy.distance import geodesic
+import os
 
 app = Flask(__name__)
 
@@ -136,7 +137,8 @@ def markers():
 
 @app.route('/delete', methods=['GET'])
 def delete():
-    pass
+    os.remove(r"/moderate.txt")
+    os.remove(r"./severe.txt")
 
 
 if __name__ == '__main__':
