@@ -2,7 +2,7 @@ const xhr = new XMLHttpRequest();
 var data;
 
 function updateChart(){
-xhr.open("GET", "http://192.168.1.6:5000/data/");
+xhr.open("GET", "https://potholedetection-f0b97ab1eedf.herokuapp.com/data/");
 xhr.send();
 xhr.responseType = "json";
 xhr.onload = () => {
