@@ -148,8 +148,8 @@ def delete():
 @app.route('/download')
 def download():
     with ZipFile("final.zip", 'w') as new_zip:
-        new_zip.write(r"./moderate.txt")
-        new_zip.write(r"./severe.txt")
+        new_zip.write(r"moderate.txt")
+        new_zip.write(r"severe.txt")
     return send_file(r"final.zip",download_name="mod.zip", as_attachment=True )
 
 if __name__ == '__main__':
