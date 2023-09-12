@@ -1,3 +1,10 @@
+const map = L.map('map').setView([18.5204,73.8567], 14);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+var update = False
 var locatorIcon = L.icon({
    iconUrl: 'https://i.imgur.com/CoiaNMM.png',
 
@@ -5,6 +12,7 @@ var locatorIcon = L.icon({
    iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+
 var moderateIcon = L.icon({
     iconUrl: 'https://i.imgur.com/Kz73Sjr.png',
 
@@ -12,6 +20,7 @@ var moderateIcon = L.icon({
     iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+
 var severeIcon = L.icon({
     iconUrl: 'https://i.imgur.com/h97mGZu.png',
 
@@ -19,15 +28,20 @@ var severeIcon = L.icon({
     iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+
 var locator = L.marker([51.5, -0.09], {icon: locatorIcon}).addTo(map).bindPopup("You Are here");
 var lenM = 0
 var lenS = 0
 const vhr = new XMLHttpRequest();
 const dhr = new XMLHttpRequest();
 var data;
+
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
 function updateChart(){
 vhr.open("GET", "https://potholedetection-f0b97ab1eedf.herokuapp.com/data/");
 vhr.send();
@@ -36,17 +50,16 @@ vhr.onload = () => {
   if (vhr.readyState == 4 && vhr.status == 200) {
     data = vhr.response;
     var newCenter = L.latLng(data.lat[0],data.lon[0]);
+    if(!update){
     map.setView(newCenter);
+    update = True;
+    }
     locator.setLatLng(newCenter);
-//    console.log(data);
   } else {
     console.log(`Error: ${vhr.status}`);
   }
 };
 
-
-
-//console.log("Updated")
 dhr.open("GET", "https://potholedetection-f0b97ab1eedf.herokuapp.com/markers");
 dhr.send();
 dhr.responseType = "json";
@@ -62,7 +75,7 @@ dhr.onload = () => {
     lenM = data.moderate.x.length;
     }
     console.log(data.moderate.x.length)
-if(data.severe.x.length != lenS){
+  if(data.severe.x.length != lenS){
     for(var a = 0;a < data.severe.x.length;a++){
     lat = data.severe.x[a]
     lon = data.severe.y[a]
@@ -75,7 +88,6 @@ if(data.severe.x.length != lenS){
     console.log(`Error: ${dhr.status}`);
   }
 };
-
 }
 
 
