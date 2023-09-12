@@ -1,10 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from geopy.distance import geodesic
-import os
 
 app = Flask(__name__)
-update = False
-
 
 @app.route('/data/', methods=['POST'])
 def get_data():
@@ -14,33 +11,42 @@ def get_data():
     lat = request.form['lat']
     lon = request.form['lon']
     if float(Y) > 1 and float(Y) < 2:
-        with open(r"./moderate.txt", "r+") as f:
-            rows = f.readlines()
-            prevlat = rows[-1].split(',')[0]
-            prevlon = rows[-1].split(',')[1]
-            location1 = (float(prevlat), float(prevlon))
-            location2 = (float(lat), float(lon))
-            distance = geodesic(location1, location2).m
-            # print(distance)
-            if distance < 100:
-                print("Same Location")
-            else:
+        try:
+            with open(r"./moderate.txt", "r+") as f:
+                rows = f.readlines()
+                prevlat = rows[-1].split(',')[0]
+                prevlon = rows[-1].split(',')[1]
+                location1 = (float(prevlat), float(prevlon))
+                location2 = (float(lat), float(lon))
+                distance = geodesic(location1, location2).m
+                # print(distance)
+                if distance < 100:
+                    print("Same Location")
+                else:
+                    f.write(f"{lat},{lon},\n")
+        except:
+            with open(r"./moderate.txt", "w+") as f:
                 f.write(f"{lat},{lon},\n")
-                update = True
+
     elif float(Y) > 2:
-        with open(r"./severe.txt", "r+") as f:
-            rows = f.readlines()
-            prevlat = rows[-1].split(',')[0]
-            prevlon = rows[-1].split(',')[1]
-            location1 = (float(prevlat), float(prevlon))
-            location2 = (float(lat), float(lon))
-            distance = geodesic(location1, location2).m
-            print(distance)
-            if distance < 100:
-                print("Same Location")
-            else:
+        try:
+            with open(r"./severe.txt", "r+") as f:
+                rows = f.readlines()
+                prevlat = rows[-1].split(',')[0]
+                prevlon = rows[-1].split(',')[1]
+                location1 = (float(prevlat), float(prevlon))
+                location2 = (float(lat), float(lon))
+                distance = geodesic(location1, location2).m
+                print(distance)
+                if distance < 100:
+                    print("Same Location")
+                else:
+                    f.write(f"{lat},{lon},\n")
+        except:
+            with open(r"./severe.txt", "w+") as f:
                 f.write(f"{lat},{lon},\n")
-                update = True
+            
+        
     with open(r"./data.txt", "r") as f:
         rows = f.readlines()[1:]
     print(len(rows))
@@ -126,6 +132,11 @@ def markers():
 
     }
     return jsonify(json)
+
+
+@app.route('/delete', methods=['GET'])
+def delete():
+    pass
 
 
 if __name__ == '__main__':
