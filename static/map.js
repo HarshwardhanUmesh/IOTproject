@@ -1,5 +1,5 @@
 var locatorIcon = L.icon({
-   iconUrl: '',
+   iconUrl: 'https://i.imgur.com/CoiaNMM.png',
 
    iconSize:     [38, 38], // size of the icon
    iconAnchor:   [22, 22], // point of the icon which will correspond to marker's location
@@ -46,7 +46,7 @@ vhr.onload = () => {
 locator.setLatLng(newCenter);
 
 //console.log("Updated")
-dhr.open("GET", "http://192.168.1.6:5000/markers");
+dhr.open("GET", "https://potholedetection-f0b97ab1eedf.herokuapp.com/markers");
 dhr.send();
 dhr.responseType = "json";
 dhr.onload = () => {
