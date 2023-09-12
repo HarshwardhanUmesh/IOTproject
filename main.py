@@ -137,10 +137,12 @@ def markers():
 
 @app.route('/delete', methods=['GET'])
 def delete():
-    os.remove(r"/moderate.txt")
-    os.remove(r"./severe.txt")
+    with open(r"./moderate.txt", "w") as f:
+        f.write("0,0,\n")
+    with open(r"./severe.txt", "w") as f:
+        f.write("0,0,\n")
     return "deleted"
-
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
