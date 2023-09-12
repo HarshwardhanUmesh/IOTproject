@@ -144,7 +144,7 @@ def delete():
     return "deleted"
 
 
-@app.route('/download/<upload_id>')
+@app.route('/download')
 def download():
     return send_file(r"./moderate.txt",download_name=upload.filename, as_attachment=True )
 
