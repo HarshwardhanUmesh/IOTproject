@@ -70,7 +70,9 @@ dhr.onload = () => {
     for(var a = 0;a < data.moderate.x.length;a++){
     lat = data.moderate.x[a]
     lon = data.moderate.y[a]
+    if(lat != 0 || lon != 0){
     L.marker([lat, lon], {icon: moderateIcon}).addTo(map).bindPopup(lat,lon);
+    }
     }
     lenM = data.moderate.x.length;
     }
@@ -79,7 +81,9 @@ dhr.onload = () => {
     for(var a = 0;a < data.severe.x.length;a++){
     lat = data.severe.x[a]
     lon = data.severe.y[a]
+    if(lat != 0 || lon != 0){
     L.marker([lat, lon], {icon: severeIcon}).addTo(map).bindPopup(lat,lon);
+    }
     }
     lenS = data.severe.x.length;
     }
