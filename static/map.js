@@ -37,13 +37,14 @@ vhr.onload = () => {
     data = vhr.response;
     var newCenter = L.latLng(data.lat[0],data.lon[0]);
     map.setView(newCenter);
+    locator.setLatLng(newCenter);
 //    console.log(data);
   } else {
     console.log(`Error: ${vhr.status}`);
   }
 };
 
-locator.setLatLng(newCenter);
+
 
 //console.log("Updated")
 dhr.open("GET", "https://potholedetection-f0b97ab1eedf.herokuapp.com/markers");
