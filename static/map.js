@@ -1,8 +1,8 @@
 var locatorIcon = L.icon({
    iconUrl: 'https://i.imgur.com/CoiaNMM.png',
 
-   iconSize:     [38, 38], // size of the icon
-   iconAnchor:   [22, 22], // point of the icon which will correspond to marker's location
+   iconSize:     [20, 20], // size of the icon
+   iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 var moderateIcon = L.icon({
