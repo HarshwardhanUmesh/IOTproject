@@ -34,8 +34,8 @@ svg{
 p.btn.btn-primary.export {
     visibility: visible;
 }
- @media (max-width: 400px) {
-    meta[name="viewport"] {
-    initial-scale: 0.5;
+ @media (max-width: 768px) {
+    .card{
+        margin-left:10px
     }
 }
