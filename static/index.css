@@ -34,8 +34,9 @@ svg{
 p.btn.btn-primary.export {
     visibility: visible;
 }
- @media (max-width: 768px) {
-    .card{
-        margin-left:10px
+@media (max-width: 768px) {
+    .container {
+         margin-right: 0px;
+         margin-left: 0px;
     }
 }
