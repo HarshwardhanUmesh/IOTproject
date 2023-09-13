@@ -35,7 +35,9 @@ p.btn.btn-primary.export {
     visibility: visible;
 }
 @media (max-width: 768px) {
-    .container {
-         justify-content: space-around;
+    #me {
+        width: max-content;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }
