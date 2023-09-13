@@ -34,6 +34,12 @@ svg{
 p.btn.btn-primary.export {
     visibility: visible;
 }
+svg.bi.bi-caret-down-fill {
+    position: absolute;
+    top: 5%;
+    left: 90%;
+}
+
 @media (max-width: 768px) {
     #me {
         width: max-content;
