@@ -34,7 +34,7 @@ svg{
 p.btn.btn-primary.export {
     visibility: visible;
 }
-svg.bi.bi-caret-down-fill {
+i.bi.bi-caret-down-fill{
     position: absolute;
     top: 5%;
     left: 90%;
