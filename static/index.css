@@ -34,7 +34,7 @@ svg{
 p.btn.btn-primary.export {
     visibility: visible;
 }
- @media (max-width: 767px) {
+ @media (max-width: 530px) {
     meta[name="viewport"] {
     initial-scale: 0.5;
     }
