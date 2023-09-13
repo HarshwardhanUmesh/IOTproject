@@ -4,6 +4,9 @@
 .navbar-brand{
     font-size: 1.5rem;
 }
+#sublav{
+    width: 100vw;
+}
 #topbox{
     margin-top: 50px;
 }
