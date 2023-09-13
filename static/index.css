@@ -36,7 +36,6 @@ p.btn.btn-primary.export {
 }
 @media (max-width: 768px) {
     .container {
-         margin-right: 0px;
-         margin-left: 0px;
+         justify-content: space-around;
     }
 }
