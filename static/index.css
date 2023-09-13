@@ -22,3 +22,9 @@ iframe{
 svg{
     align-items: end;
 }
+a {
+    visibility: hidden;
+}
+p.btn.btn-primary.export {
+    visibility: visible;
+}
