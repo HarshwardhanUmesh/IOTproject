@@ -12,7 +12,7 @@ def get_data():
     Z = request.form['z']
     lat = request.form['lat']
     lon = request.form['lon']
-    if float(Y) > 1 and float(Y) < 2:
+    if float(Y) > 0.75 and float(Y) < 1.5:
         try:
             with open(r"./moderate.txt", "r+") as f:
                 rows = f.readlines()
@@ -30,7 +30,7 @@ def get_data():
             with open(r"./moderate.txt", "w+") as f:
                 f.write(f"{lat},{lon},\n")
 
-    elif float(Y) > 2:
+    elif float(Y) > 1.5:
         try:
             with open(r"./severe.txt", "r+") as f:
                 rows = f.readlines()
