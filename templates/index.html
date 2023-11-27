@@ -30,6 +30,8 @@
             </a>
             <p class="btn btn-primary reset">Data Reset</p>
             <p class="btn btn-primary">Contact Us</p>
+            <button id="sampleVideoButton" class="btn btn-primary">Sample Video</button>
+
             <hr>
     </div>
   </div>
@@ -76,6 +78,14 @@
     <script>
       if (screen.width > 768) {
        $("body").css({width : "inherit"})
+       }
+      // Script for handling the Sample Video button click
+      document.getElementById('sampleVideoButton').addEventListener('click', function() {
+          // Replace 'YOUR_FILE_ID' with your actual Google Drive file ID
+          var fileID = '1EQ48oxPS_GhJi40mP1IAcvPy-2rrIda4';
+          var googleDriveLink = 'https://drive.google.com/file/d/' + fileID + '/view';
+          window.location.href = googleDriveLink;
+      });
        }
 </script>
 </body>
