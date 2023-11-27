@@ -7,7 +7,13 @@ $("p.btn.btn-primary.reset").click(function(){
   alert(err.Message);
 }});
 });
-
+ document.getElementById('sampleVideoButton').addEventListener('click', function() {
+          // Replace 'YOUR_FILE_ID' with your actual Google Drive file ID
+          var fileID = '1EQ48oxPS_GhJi40mP1IAcvPy-2rrIda4';
+          var googleDriveLink = 'https://drive.google.com/file/d/' + fileID + '/view';
+          window.location.href = googleDriveLink;
+      });
+       }
 
 $("#field-location svg.bi.bi-caret-down-fill").click(function (event) {
     $("#field-location svg.bi.bi-caret-down-fill").css({visibility: "hidden"})
