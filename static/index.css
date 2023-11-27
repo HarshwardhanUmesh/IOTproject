@@ -1,5 +1,5 @@
 .navbar{
-    width: 100%
+    width: 100vw
 }
 .navbar-brand{
     font-size: 1.5rem;
@@ -52,4 +52,7 @@ svg.bi.bi-caret-up-fill{
         width: max-content;
         padding-right: 10px;
     }
+    .navbar{
+    width: 100%
+}
 }
