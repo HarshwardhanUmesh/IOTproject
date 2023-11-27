@@ -13,7 +13,7 @@ $("p.btn.btn-primary.reset").click(function(){
           var googleDriveLink = 'https://drive.google.com/file/d/' + fileID + '/view';
           window.location.href = googleDriveLink;
       });
-       }
+       
 
 $("#field-location svg.bi.bi-caret-down-fill").click(function (event) {
     $("#field-location svg.bi.bi-caret-down-fill").css({visibility: "hidden"})
