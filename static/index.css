@@ -1,3 +1,6 @@
+.container{
+    max-width: unset;
+}
 .navbar{
     width: 100vw;
     max-width: unset;
