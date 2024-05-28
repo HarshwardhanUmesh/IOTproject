@@ -14,7 +14,7 @@ var locatorIcon = L.icon({
 });
 
 var moderateIcon = L.icon({
-    iconUrl: 'https://i.imgur.com/MBvjFAD.png',
+    iconUrl: 'https://i.imgur.com/iLY8PK6.png',
 
     iconSize:     [20, 20], // size of the icon
     iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
