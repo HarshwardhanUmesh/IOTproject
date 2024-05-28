@@ -22,7 +22,7 @@ var moderateIcon = L.icon({
 });
 
 var severeIcon = L.icon({
-    iconUrl: 'https://i.imgur.com/h97mGZu.png',
+    iconUrl: 'https://i.imgur.com/faN1VQ2.png',
 
     iconSize:     [20, 20], // size of the icon
     iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
