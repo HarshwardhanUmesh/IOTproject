@@ -71,7 +71,8 @@ dhr.onload = () => {
     lat = data.moderate.x[a]
     lon = data.moderate.y[a]
     if(lat != 0 || lon != 0){
-    L.marker([lat, lon], {icon: moderateIcon}).addTo(map).bindPopup(lat,lon);
+    var str = String(lat) + `,` + String(lon)
+    L.marker([lat, lon], {icon: moderateIcon}).addTo(map).bindPopup(str);
     }
     }
     lenM = data.moderate.x.length;
@@ -81,8 +82,9 @@ dhr.onload = () => {
     for(var a = 0;a < data.severe.x.length;a++){
     lat = data.severe.x[a]
     lon = data.severe.y[a]
+    var str = String(lat) + `,` + String(lon)
     if(lat != 0 || lon != 0){
-    L.marker([lat, lon], {icon: severeIcon}).addTo(map).bindPopup(lat,lon);
+    L.marker([lat, lon], {icon: severeIcon}).addTo(map).bindPopup(str);
     }
     }
     lenS = data.severe.x.length;
